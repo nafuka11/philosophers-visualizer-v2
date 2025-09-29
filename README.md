@@ -1,30 +1,73 @@
-# React + TypeScript + Vite
+# philosophers-visualizer-v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Philosophers visualizer v2 is a lightweight log visualizer for the 42 school "Philosophers" assignment.
 
-Currently, two official plugins are available:
+Paste your program output and inspect each philosopher's state on an interactive timeline.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live demo
 
-## Expanding the ESLint configuration
+- https://nafuka11.github.io/philosophers-visualizer-v2/
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Key features
 
-- Configure the top-level `parserOptions` property like this:
+- Render a timeline of `is eating`, `is sleeping`, and `is thinking` intervals for every philosopher.
+- Highlight parsing problems and inconsistent logs directly in the UI.
+- Stay entirely client-side—no log data leaves your browser.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Log format
+
+Supported lines are:
+
+```
+<timestamp_ms> <philosopher_id> is eating
+<timestamp_ms> <philosopher_id> is sleeping
+<timestamp_ms> <philosopher_id> is thinking
+<timestamp_ms> <philosopher_id> died
+<timestamp_ms> <philosopher_id> has taken a fork
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+`has taken a fork` entries are ignored for the timeline but kept for validation. Any other line will be reported as an error.  
+When a philosopher dies, subsequent actions for that philosopher are flagged as errors.
+
+## Local development
+
+Prerequisites: Node.js >= 18 and Yarn.
+
+```bash
+yarn install --frozen-lockfile
+yarn dev
+```
+
+The Vite dev server runs on http://localhost:5173/philosophers-visualizer-v2/ by default.
+
+To lint the project:
+
+```bash
+yarn lint
+```
+
+## Storybook
+
+Component previews are available through Storybook.
+
+```bash
+yarn storybook
+```
+
+Storybook starts on http://localhost:6006/.
+
+## Build & preview
+
+Build a production bundle with:
+
+```bash
+yarn build
+```
+
+The build output is generated in `dist/`. Run the production preview locally with:
+
+```bash
+yarn preview
+```
+
+The site is deployed automatically to GitHub Pages on every push to the `main` branch.
