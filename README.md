@@ -56,6 +56,19 @@ yarn storybook
 
 Storybook starts on http://localhost:6006/.
 
+## Visual regression tests
+
+Chromatic powers visual regression testing for Storybook components.
+
+Locally run:
+
+```bash
+CHROMATIC_PROJECT_TOKEN=<your-project-token> yarn chromatic --exit-zero-on-changes
+```
+
+In CI, the `Visual regression tests` workflow publishes builds to Chromatic.  
+Add the `CHROMATIC_PROJECT_TOKEN` secret in the repository settings before enabling the workflow.
+
 ## Build & preview
 
 Build a production bundle with:
