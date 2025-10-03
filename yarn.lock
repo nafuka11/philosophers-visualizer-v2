@@ -2137,9 +2137,9 @@ react-dom@^19.0.0:
     scheduler "^0.26.0"
 
 react-google-charts@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/react-google-charts/-/react-google-charts-4.0.1.tgz#b7713856a48009b77318f8951ddf2c3ba39f991b"
-  integrity sha512-V/hcMcNuBgD5w49BYTUDye+bUKaPmsU5vy/9W/Nj2xEeGn+6/AuH9IvBkbDcNBsY00cV9OeexdmgfI5RFHgsXQ==
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/react-google-charts/-/react-google-charts-4.0.7.tgz#b6a6919a1034919927ef33bd7af268deb5592adc"
+  integrity sha512-u1HHEaFvjYrO4r5tnVic7Zl+p7rZKqq6ukLY7E4qdIREN7MPiBBMVRmfUpuWHCQw5aFLRoK+EAHi0c7ub8CW3A==
 
 react-refresh@^0.17.0:
   version "0.17.0"
